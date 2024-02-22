@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
+  dados={
+    nome:'',
+    email:'',
+    telefone:'',
+    cpf:'',
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  adicionar(){
+    alert("Deu Certo")
   }
 
 }

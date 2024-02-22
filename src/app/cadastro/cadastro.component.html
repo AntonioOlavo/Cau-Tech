@@ -11,7 +11,7 @@
         id="nome"
         name="nome"
         placeholder="Digite Seu Nome Aqui"
-        >
+        [(ngModel)]="dados.nome">
     </form>
     <br>
     <form>
@@ -22,7 +22,7 @@
         id="e-mail"
         name="e-mail"
         placeholder="Digite Seu e-mail Aqui"
-        >
+        [(ngModel)]="dados.email">
     </form>
     <br>
     <form>
@@ -33,7 +33,7 @@
         id="telefone"
         name="telefone"
         placeholder="Digite Seu telefone Aqui"
-        >
+        [(ngModel)]="dados.telefone">
     </form>
     <br>
     <form>
@@ -44,6 +44,9 @@
         id="cpf"
         name="cpf"
         placeholder="Digite Seu CPF Aqui"
-        >
+        [(ngModel)]="dados.cpf">
     </form>
+        <div>
+    <button (click)="adicionar()" class="botao" type="enviar">Cadastrar</button>
+        </div>
 </section>
