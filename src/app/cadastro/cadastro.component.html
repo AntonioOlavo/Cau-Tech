@@ -1,3 +1,6 @@
+
+
+
 <section class="container criar-pensamentos ff-inter">
     <header class="header">
         <img src="../../assets/Imagens do curso/Imagem do WhatsApp de 2024-02-22 à(s) 16.44.00_101be094.jpg" alt="Logo da Aplicação Cau Tech">
@@ -12,9 +15,9 @@
         name="nome"
         placeholder="Digite Seu Nome Aqui"
         [(ngModel)]="dados.nome">
-    </form>
+    
     <br>
-    <form>
+    
         <label for="e-mail">E-mail</label>
         <input
         type="text"
@@ -23,30 +26,41 @@
         name="e-mail"
         placeholder="Digite Seu e-mail Aqui"
         [(ngModel)]="dados.email">
-    </form>
+    
     <br>
-    <form>
+    
         <label for="telefone">Telefone</label>
         <input
-        type="text"
+        type="tel"
+        mask="(00) 0 0000-0000"
         class="input"
         id="telefone"
         name="telefone"
         placeholder="Digite Seu telefone Aqui"
-        [(ngModel)]="dados.telefone">
-    </form>
+        [(ngModel)]="dados.telefone"
+        [maxLength]="13">
+    
     <br>
-    <form>
+        
         <label for="cpf">CPF</label>
         <input
+        autofocus
         type="text"
+        mask="000.000.000-00"
         class="input"
         id="cpf"
         name="cpf"
         placeholder="Digite Seu CPF Aqui"
-        [(ngModel)]="dados.cpf">
+        required="required" 
+        pattern=""
+        [(ngModel)]="dados.cpf"
+        [maxlength]="14"
+    > 
     </form>
         <div>
-    <button (click)="adicionar()" class="botao" type="enviar">Cadastrar</button>
+    <button (click)="adicionar()"  class="botao" type="enviar">Cadastrar</button>
         </div>
-</section>
+
+        
+</section> 
+

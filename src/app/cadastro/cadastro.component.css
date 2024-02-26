@@ -86,7 +86,7 @@
   }
   
   .modelo2 {
-    box-shadow: 8px 8px 0px #6BD1FF;
+    box-shadow: 8px 8px 0px #023750;
   }
   
   .modelo3 {
@@ -133,3 +133,5 @@
   input[type='radio']:checked+.custom-radio span {
     background: #154580;
   }
+
+  

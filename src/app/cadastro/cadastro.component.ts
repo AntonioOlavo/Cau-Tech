@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -14,14 +15,18 @@ export class CadastroComponent implements OnInit {
     cpf:'',
   }
 
-
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
   adicionar(){
-    alert("Deu Certo")
+    alert("Dados Cadastrados")
+    console.log(this.dados)
+  
+
   }
 
 }
