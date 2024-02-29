@@ -4,6 +4,7 @@ import { SiteLeadService } from '../services/site-lead-service';
 import { throwError } from 'rxjs';
 
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -48,11 +49,17 @@ export class CadastroComponent implements OnInit {
     this.leadService.registerLead(this.dados).subscribe(
       (response: any) => {
         this.toastr.success("Dados Cadastrados", "Sucesso");
+        this.dados.nome = ""
+        this.dados.email = ""
+        this.dados.telefone = ""
+        this.dados.cpf = ""
       },
       (error: any) => {
         this.toastr.error('Ocorreu um erro ao cadastrar os dados:', error);
       }
+      
     );
+    ///location.reload() não esta deixando salvar os dados da variavel dados
   }
   
 
