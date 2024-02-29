@@ -1,0 +1,13 @@
+{
+    "cadastros":[
+
+        {
+            "nome":"",
+            "email":"",
+            "telefone":1,
+            "cpf":2
+
+        }
+
+    ]
+}

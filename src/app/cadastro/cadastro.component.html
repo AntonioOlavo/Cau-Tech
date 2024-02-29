@@ -1,12 +1,11 @@
-
-
-
 <section class="container criar-pensamentos ff-inter">
     <header class="header">
         <img src="../../assets/Imagens do curso/Imagem do WhatsApp de 2024-02-22 à(s) 16.44.00_101be094.jpg" alt="Logo da Aplicação Cau Tech">
         <h2>Cadastre-se Abaixo</h2>
     </header>
-    <form>
+
+   
+    <form >
         <label for="nome">Nome</label>
         <input
         type="textarea"
@@ -16,31 +15,33 @@
         placeholder="Digite Seu Nome Aqui"
         [(ngModel)]="dados.nome">
     
-    <br>
     
-        <label for="e-mail">E-mail</label>
+    
+        <label for="email">E-mail</label>
         <input
-        type="text"
+        type="email"
+        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
         class="input"
-        id="e-mail"
-        name="e-mail"
+        id="email"
+        name="email"
         placeholder="Digite Seu e-mail Aqui"
         [(ngModel)]="dados.email">
     
-    <br>
+    
     
         <label for="telefone">Telefone</label>
         <input
-        type="tel"
+        type="text"
         mask="(00) 0 0000-0000"
         class="input"
         id="telefone"
         name="telefone"
         placeholder="Digite Seu telefone Aqui"
         [(ngModel)]="dados.telefone"
-        [maxLength]="13">
+        [maxLength]="16">
+        
     
-    <br>
+    
         
         <label for="cpf">CPF</label>
         <input
@@ -52,15 +53,25 @@
         name="cpf"
         placeholder="Digite Seu CPF Aqui"
         required="required" 
-        pattern=""
         [(ngModel)]="dados.cpf"
-        [maxlength]="14"
+        ngModel max="14"
+        
     > 
     </form>
         <div>
-    <button (click)="adicionar()"  class="botao" type="enviar">Cadastrar</button>
+    <button (click)="adicionar()" class="botao" type="enviar" >Cadastrar</button>
         </div>
 
+           
         
+           
 </section> 
 
+
+
+<!--  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>     
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script> 
+            <script>
+                $('#cpf').mask('000.000.000-00', {reverse: true});
+            </script> -->
