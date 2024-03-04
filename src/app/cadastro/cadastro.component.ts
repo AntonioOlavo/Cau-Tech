@@ -17,6 +17,7 @@ export class CadastroComponent implements OnInit {
     email:'',
     telefone: '',
     cpf:  '',
+    data:''
   }
 
  
@@ -40,6 +41,9 @@ export class CadastroComponent implements OnInit {
       return; 
     } 
     if (this.dados.cpf === '') {
+      this.toastr.error('O campo CPF não pode estar vazio.');
+      return; 
+    }  if (this.dados.data === '') {
       this.toastr.error('O campo CPF não pode estar vazio.');
       return; 
     } 

@@ -57,6 +57,21 @@
         ngModel max="14"
         
     > 
+
+    <label for="data">Data de Nascimento</label>
+        <input
+        autofocus
+        type="text"
+        mask="99/99/9999"
+        class="input"
+        id="data"
+        name="data"
+        placeholder="Digite Sua Data Aqui"
+        required="required" 
+        [(ngModel)]="dados.data"
+        
+        
+    > 
     </form>
         <div>
     <button (click)="adicionar()" class="botao" type="enviar" >Cadastrar</button>
