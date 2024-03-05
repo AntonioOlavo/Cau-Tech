@@ -1,14 +1,14 @@
-const expresso = requer('expresso');
+const express = require('express');
 
-const caminho = require('caminho');
+const caminho = require('path');
 
 const app=express();
 
-app.use(express.static(__dirname + '/dist/cautech'));
+app.use(express.static(dirname + '/dist/cautech'));
 
 app.get('/*', function(req,res) {
 
-res.sendFile(caminho.join(__dirname+
+res.sendFile(caminho.join(dirname+
 
 '/dist/cautech/index.html'));});
 
