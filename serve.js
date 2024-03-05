@@ -4,7 +4,7 @@ const caminho = require('path');
 
 const app=express();
 
-app.use(express.static(dirname + '/dist/angular-cautech'));
+app.use(express.static(dirname + '/dist/cautech'));
 
 app.get('/*', function(req,res) {
 
