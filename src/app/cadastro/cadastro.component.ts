@@ -20,6 +20,7 @@ export class CadastroComponent implements OnInit {
     data:''
   }
 
+
  
   constructor(private toastr: ToastrService,private leadService: SiteLeadService) {}
 
@@ -34,6 +35,9 @@ export class CadastroComponent implements OnInit {
     } 
     if (this.dados.email === '') {
       this.toastr.error('O campo email não pode estar vazio.');
+      return;
+    } else if (!/\S+@\S+\.\S+/.test(this.dados.email)) {
+      this.toastr.error('Por favor, insira um endereço de email válido.');
       return; 
     } 
     if (this.dados.telefone === '') {
