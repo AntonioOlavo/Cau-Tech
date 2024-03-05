@@ -57,6 +57,7 @@ export class CadastroComponent implements OnInit {
         this.dados.email = ""
         this.dados.telefone = ""
         this.dados.cpf = ""
+        this.dados.data = ""
       },
       (error: any) => {
         this.toastr.error('Ocorreu um erro ao cadastrar os dados:', error);
