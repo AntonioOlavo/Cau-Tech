@@ -1,11 +1,15 @@
 const express = require('express');
-const path = require('path');
-const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist', 'cautech')));
+const caminho = require('path');
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'cautech', 'index.html'));
-});
+const app=express();
+
+app.use(express.static(dirname + '/dist/cautech'));
+
+app.get('/*', function(req,res) {
+
+res.sendFile(caminho.join(dirname+
+
+'/dist/cautech/index.html'));});
 
 app.listen(process.env.PORT || 8080);
