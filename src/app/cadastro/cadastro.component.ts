@@ -74,23 +74,25 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  //validarEmail(email: string){
-    
-  //}
 
-  //validarCamposEvent(event: any){
-   // let element = event.srcElement;
-   // let email = element.value;
-   // if (!this.validarEmail(email)){
-    //  element.style = "border-color: red; color: red;";
-     // this.toastr.error('Ei ma tu sabe que esse CPF ta errado ma, inventa não');
-   // } else {      
-    //  element.style = "border-color: black; color: black;";
-   // }
- // }
-
-
-
+  validarEmailEvent(event: any) {
+    let element = event.srcElement;
+    let email = element.value;
+  
+    if (email === '') {
+      element.style.borderColor = 'red';
+      element.style.color = 'red';
+      this.toastr.error('O campo email não pode estar vazio.');
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      element.style.borderColor = 'red';
+      element.style.color = 'red';
+      this.toastr.error('Por favor, insira um endereço de email válido.');
+    } else {
+      element.style.borderColor = 'black';
+      element.style.color = 'black';
+    }
+  }
+  
 
 
 
