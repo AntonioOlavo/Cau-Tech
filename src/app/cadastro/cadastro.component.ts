@@ -35,29 +35,39 @@ export class CadastroComponent implements OnInit {
 
   adicionar() {
     if (this.dados.nome === '') {
-      this.toastr.error('O campo nome não pode estar vazio.');
+      this.toastr.error('Os Campos não podem estar vazios.');
       return; 
-    } 
+  } 
+  if (this.dados.nome.trim().length < 3) {
+    this.toastr.error('O campo nome deve possuir no mínimo 3 caracteres.');
+    return;
+    }
+
     if (this.dados.email === '') {
-      this.toastr.error('O campo email não pode estar vazio.');
+      this.toastr.error('Os Campos não podem estar vazios.');
       return;
     } else if (!/\S+@\S+\.\S+/.test(this.dados.email)) {
       this.toastr.error('Por favor, insira um endereço de email válido.');
       return; 
     } 
     if (this.dados.telefone === '') {
-      this.toastr.error('O campo telefone não pode estar vazio.');
+      this.toastr.error('Os Campos não podem estar vazios.');
       return; 
+      
     } 
+    if (this.dados.telefone.trim().length < 11) {
+      this.toastr.error('O campo telefone não Esta Correto');
+      return;
+  }
     if (this.dados.cpf === '') {
-      this.toastr.error('O campo CPF não pode estar vazio.');
+      this.toastr.error('Os Campos não podem estar vazios.');
       return; 
     } else if (!this.validarCPF(this.dados.cpf)) {
       this.toastr.error('CPF inválido. Por favor, insira um CPF válido.');
       return; 
     }
     if (this.dados.data === '') {
-      this.toastr.error('O campo Data não pode estar vazio.');
+      this.toastr.error('Os Campos não podem estar vazios.');
       return; 
     } 
     
