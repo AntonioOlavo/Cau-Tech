@@ -39,8 +39,16 @@
     padding: 1rem 2rem;
     border-radius: 20px;
     margin: 0.5rem 0 2rem;
-  }
+  } 
   
+  .criar-pensamentos form .input-error {
+    border: 10px;
+    border-color: red;
+    height: 40px;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin: 0.5rem 0 2rem;
+  }
   
   .criar-pensamentos form .textarea {
     border: none;

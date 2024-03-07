@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { FormGroup, FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +10,8 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  registroForm!:FormGroup
+  submitted = false;
   title = 'cautech';
 }
+

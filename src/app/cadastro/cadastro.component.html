@@ -54,9 +54,10 @@
         placeholder="Digite Seu CPF Aqui"
         required="required" 
         [(ngModel)]="dados.cpf"
-        ngModel max="14"
+        (change)="validarCpfEvent($event)"
         
     > 
+    <!-- ngModel max="14" -->
 
 
 
@@ -78,7 +79,6 @@
         <div>
     <button (click)="adicionar()" class="botao" type="enviar" >Cadastrar</button>
         </div>
-        
            
 </section> 
 

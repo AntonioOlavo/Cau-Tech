@@ -2,13 +2,18 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { SiteLeadService } from '../services/site-lead-service';
 import { throwError } from 'rxjs';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+
 export class CadastroComponent implements OnInit {
+  registroForm!:FormGroup
+  submitted = false;
 
   dados = {
     nome:'',
@@ -18,9 +23,15 @@ export class CadastroComponent implements OnInit {
     data:''
   }
 
+ 
+  
   constructor(private toastr: ToastrService, private leadService: SiteLeadService) {}
 
+  
+
+
   ngOnInit(): void {}
+
 
   adicionar() {
     if (this.dados.nome === '') {
@@ -46,7 +57,7 @@ export class CadastroComponent implements OnInit {
       return; 
     }
     if (this.dados.data === '') {
-      this.toastr.error('O campo CPF não pode estar vazio.');
+      this.toastr.error('O campo Data não pode estar vazio.');
       return; 
     } 
     
@@ -62,6 +73,39 @@ export class CadastroComponent implements OnInit {
       }
     );
   }
+
+  //validarEmail(email: string){
+    
+  //}
+
+  //validarCamposEvent(event: any){
+   // let element = event.srcElement;
+   // let email = element.value;
+   // if (!this.validarEmail(email)){
+    //  element.style = "border-color: red; color: red;";
+     // this.toastr.error('Ei ma tu sabe que esse CPF ta errado ma, inventa não');
+   // } else {      
+    //  element.style = "border-color: black; color: black;";
+   // }
+ // }
+
+
+
+
+
+
+  validarCpfEvent(event: any){
+    let element = event.srcElement;
+    let cpf = element.value;
+    if (!this.validarCPF(cpf)){
+      element.style = "border-color: red; color: red;";
+      this.toastr.error('Ei ma tu sabe que esse CPF ta errado ma, inventa não');
+    } else {      
+      element.style = "border-color: black; color: black;";
+    }
+  }
+
+
 
   validarCPF(cpf: string): boolean {         
     cpf = cpf.replace(/[^\d]+/g, '');
